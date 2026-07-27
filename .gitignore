@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+.DS_Store
+# Role-tailored PDFs (site uses Resume.pdf from default profile)
+Resume-*.pdf

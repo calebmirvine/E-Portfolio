@@ -1,0 +1,64 @@
+name: Build Resume
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - resume/**
+      - scripts/build_resume.py
+      - scripts/requirements.txt
+      - .github/workflows/build-resume.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-resume-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate LaTeX and HTML from resume sources
+        run: python scripts/build_resume.py --profile default
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            latexmk
+
+      - name: Compile Resume.pdf
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error Calebs_Resume.tex
+          mv -f Calebs_Resume.pdf Resume.pdf
+          latexmk -c Calebs_Resume.tex || true
+
+      - name: Commit generated artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Calebs_Resume.tex index.html Resume.pdf
+          if git diff --staged --quiet; then
+            echo "No resume artifacts changed."
+            exit 0
+          fi
+          git commit -m "chore: regenerate resume from resume/ sources"
+          git push

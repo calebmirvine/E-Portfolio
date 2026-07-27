@@ -1,0 +1,262 @@
+# Living resume inventory — add and refine; do not delete content.
+# Role-specific presentation lives in resume/profiles/*.yaml
+# Build: python scripts/build_resume.py [--profile NAME]
+
+basics:
+  name: Caleb M. Irvine
+  location: Victoria, BC
+  phone: "(250) 986-3564"
+  email: irvinecaleb1@gmail.com
+  linkedin_display: linkedin.com/in/calebmirvine
+  linkedin_url: https://linkedin.com/in/calebmirvine
+  github_display: github.com/calebmirvine
+  github_url: https://github.com/calebmirvine
+
+# Full skill inventory; profiles choose which categories/order to show.
+skills:
+  - id: productivity
+    category: Productivity & Collaboration
+    detail: Microsoft 365 (Teams, SharePoint, Excel, Word, PowerPoint, Outlook), PowerApps, Power Automate, Google Workspace
+  - id: data-process
+    category: Data & Process Improvement
+    detail: Dataverse, SQL, Python (Pandas, ETL), Workflow Automation, Requirements Gathering, Data Normalization
+  - id: communication
+    category: Communication & Administration
+    detail: SOP Documentation, Technical Writing, Program Coordination, Cross-functional Teamwork
+  - id: software-dev
+    category: Software Development
+    detail: Python, C#, C++, JavaScript, Java, Swift
+  - id: quality-delivery
+    category: Quality & Delivery
+    detail: Agile, Jira, Confluence, Test-first development, Python unit testing, GitHub Actions CI
+  - id: ai-data
+    category: AI & Data
+    detail: PyTorch fundamentals, OpenCV, Local LLMs, M365/Dropbox agents, Power Automate AI parsing, Python (Pandas, SQL)
+  - id: cloud-platforms
+    category: Cloud & Platforms
+    detail: AWS (Lambda, API Gateway, DynamoDB, S3), Microsoft Intune, Entra ID, Microsoft 365, Azure Maps
+
+education:
+  - id: camosun-ics
+    institution: Camosun College
+    location: Victoria, BC
+    degree: Diploma in Information and Computer Systems Technology
+    dates: September 2024 -- Expected August 2026
+    bullets:
+      - id: edu-honours
+        prefix: "Honours & Awards"
+        text: >-
+          Dean's Honour Roll; Recipient of the 2026 Victoria Innovation,
+          Advanced Technology & Entrepreneurship Council (VIATEC) Award in
+          Computer Science.
+      - id: edu-leadership
+        prefix: Leadership
+        text: >-
+          Elected Chair of the Summer 2026 Technology Capstone Showcase,
+          leading and overseeing the entire event process.
+      - id: edu-agile
+        prefix: Coursework
+        text: >-
+          Agile methodologies and systems analysis; network programming with
+          Python unit tests, test-first development, and GitHub Actions CI for
+          automated test runs.
+      - id: edu-capstone-tools
+        prefix: Capstone delivery
+        text: >-
+          Tracking work in Jira and maintaining live project documentation in
+          Confluence for a team-based software capstone.
+
+experience:
+  - id: it-lead
+    title: Information Technology Lead
+    dates: May 2025 -- Current
+    organization: Regional Facilities & Healthcare Contractor (Under NDA)
+    location: Victoria, BC
+    bullets:
+      - id: it-lead-ops
+        tags: [leadership, process]
+        text: >-
+          Direct IT operations, tech procurement, and workflow strategy for a
+          commercial service provider supporting 100+ distributed frontline and
+          administrative staff.
+      - id: it-lead-powerapps
+        tags: [m365, testing, process]
+        text: >-
+          Engineered low-code mobile Power Apps and Microsoft Lists solutions
+          utilized by frontline workers for compliance tracking and secure key
+          hand-offs across 80+ operational sites.
+      - id: it-lead-dataverse
+        tags: [data, process]
+        text: >-
+          Centralized administrative operations by migrating non-normalized
+          legacy Excel tracking sheets into a structured Dataverse data model,
+          streamlining workflows for core office staff.
+      - id: it-lead-mdm
+        tags: [cloud, ops]
+        text: >-
+          Unified endpoint management for a mixed Windows/Apple environment
+          using Microsoft Intune and Google Workspace, securing device
+          deployments and access privileges for field personnel.
+      - id: it-lead-sharepoint
+        tags: [m365, communication]
+        text: >-
+          Developed internal SharePoint portals for SOP documentation and
+          interactive tutorials, drastically reducing onboarding time for new
+          administrative and field-support hires.
+      - id: it-lead-validate
+        tags: [testing, process]
+        text: >-
+          Validated Power Apps and workflow solutions against operational
+          requirements with frontline and admin stakeholders, refining acceptance
+          criteria before rollout across sites.
+      - id: it-lead-ai
+        tags: [ai, m365]
+        text: >-
+          Applied M365 and Dropbox agents plus Power Automate and Google
+          Workspace AI parsing to extract structured outputs from documents,
+          always verifying results before operational use.
+
+  - id: systems-tech
+    title: Systems Technician
+    dates: May 2024 -- April 2025
+    organization: Mother Computers
+    location: Victoria, BC
+    bullets:
+      - id: mother-consult
+        tags: [communication, analysis]
+        text: >-
+          Acted as a primary consultant for small business and educational
+          clients, providing systems analysis to scope hardware upgrades, OS
+          migrations, and cross-platform solutions.
+      - id: mother-queue
+        tags: [ops, communication]
+        text: >-
+          Managed a high-volume service queue as the go-to Apple specialist,
+          prioritizing client needs to ensure rapid turnaround on OS deployments
+          and hardware repairs.
+
+  - id: apple-advisor
+    title: Apple Advisor
+    dates: October 2023 -- May 2024
+    organization: Best Buy Canada
+    location: Victoria, BC
+    bullets:
+      - id: bby-consult
+        tags: [communication]
+        text: >-
+          Provided technical consultation on device specifications and ecosystem
+          integration as a Lead Apple Champion.
+      - id: bby-guidance
+        tags: [communication]
+        text: >-
+          Provided frontline technical guidance to customers and team members,
+          translating complex device setup and configuration steps into clear,
+          accessible instructions.
+
+  - id: butchart
+    title: Dining Room Front of House Support
+    dates: April 2023 -- August 2023
+    organization: The Butchart Gardens
+    location: Brentwood Bay, BC
+    bullets:
+      - id: butchart-service
+        tags: [communication]
+        text: >-
+          Delivered exceptional customer service in a high-volume team
+          environment, developing a deep understanding of The Gardens'
+          operations, staff culture, and high standards for guest experience.
+
+  - id: citymac
+    title: Certified Apple Systems Technician
+    dates: September 2019 -- August 2021
+    organization: CityMac
+    location: Bellingham, WA
+    bullets:
+      - id: citymac-queue
+        tags: [ops, communication]
+        text: >-
+          Managed a high-volume repair queue, personally handling over 40% of
+          the department's device throughput while maintaining excellent customer
+          satisfaction through direct client communication.
+
+projects:
+  - id: vendor-etl
+    name: Vendor ETL Tool
+    tech: Python, Httpx, Pandas, Excel
+    dates: "2025"
+    bullets:
+      - id: vendor-etl-main
+        tags: [data, automation]
+        text: >-
+          Built an asynchronous web scraping and ETL pipeline to automate
+          supplier data collection, normalize records, and output to Excel with
+          pivot tables, increasing retrieval speed by 15x and saving 90% of
+          manual research hours.
+
+  - id: enterprise-mdm
+    name: Enterprise MDM Deployment
+    tech: Intune, Apple Business Manager, Entra ID
+    dates: "2024"
+    bullets:
+      - id: mdm-main
+        tags: [cloud, ops]
+        text: >-
+          Designed a scalable MDM framework supporting Intune and Apple MDM for
+          automated device registration, security policy enforcement, and
+          compliance monitoring, improving organizational workflow.
+
+  - id: monument-unmaking
+    name: Monument Unmaking
+    tech: Unity, C#, AR, Niantic SDK, AWS, Jira, Confluence
+    dates: In Development
+    bullets:
+      - id: monument-lead
+        tags: [leadership, agile]
+        text: >-
+          Acting as Lead Communicator and AR Developer for a team-based capstone
+          project to reclaim public monuments through augmented reality; tracking
+          delivery in Jira and documenting decisions in Confluence.
+      - id: monument-ar
+        tags: [software]
+        text: >-
+          Developing the AR experience in Unity with the Niantic SDK to anchor
+          3D digital art to real-world locations, creating a platform for
+          marginalized artists.
+      - id: monument-aws
+        tags: [cloud, testing]
+        text: >-
+          Utilizing a serverless AWS backend (Lambda, API Gateway, DynamoDB, S3)
+          to dynamically serve monument data and 3D models; clarifying acceptance
+          criteria and testability for API-backed mobile features.
+
+  - id: mnist-opencv
+    name: Computer Vision & Neural Nets
+    tech: Python, PyTorch, OpenCV, Jupyter
+    dates: "2025 -- 2026"
+    bullets:
+      - id: mnist-main
+        tags: [ai]
+        text: >-
+          Built an MNIST digit classifier and explored OpenCV image-processing
+          pipelines; studied PyTorch fundamentals for training and evaluating
+          simple neural networks.
+      - id: mnist-llms
+        tags: [ai]
+        text: >-
+          Hosted and experimented with local LLMs for personal productivity,
+          focusing on understanding model outputs rather than treating them as
+          ground truth.
+
+  - id: voyage-booker
+    name: Voyage Booker
+    tech: JavaScript, Leaflet.js, Azure Maps
+    dates: "2025"
+    bullets:
+      - id: voyage-main
+        tags: [integration, cloud]
+        text: >-
+          Built an interactive nautical trip planner integrating Azure Maps for
+          weather and timezone data, practicing API integration and client-side
+          validation of external service responses.
+
+interests: Hiking, camping, guitar, exploring emerging technologies.

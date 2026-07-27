@@ -1,0 +1,55 @@
+# R8dius Quality Engineering Analyst/Consultant tailor.
+# Build: python scripts/build_resume.py --profile r8dius-qe
+
+show_interests: false
+
+objective: >-
+  To join R8dius as a Quality Engineering Analyst/Consultant, applying analytical
+  curiosity, Agile delivery habits, and careful use of AI tools to help clients
+  turn requirements into clear test scenarios and reliable technology outcomes.
+
+qualifications:
+  - Familiar with Agile delivery using Jira and Confluence; coursework in Agile and systems analysis, with capstone work tracked and documented in those tools.
+  - Translates operational and product requirements into testable criteria; experience validating low-code solutions and clarifying acceptance criteria with stakeholders.
+  - Hands-on with Python unit testing, test-first concepts, and GitHub Actions CI for automated test runs in coursework and team projects.
+  - Uses AI tools (M365/Dropbox agents, Power Automate AI, local LLMs, PyTorch/OpenCV exploration) to accelerate analysis while verifying outputs before acting on them.
+  - Strong communicator across technical and non-technical audiences, with leadership as capstone Lead Communicator and Chair of the Camosun Technology Capstone Showcase.
+
+skills:
+  - quality-delivery
+  - ai-data
+  - cloud-platforms
+  - software-dev
+
+include:
+  education:
+    - edu-honours
+    - edu-agile
+    - edu-capstone-tools
+    - edu-leadership
+  experience:
+    it-lead:
+      - it-lead-validate
+      - it-lead-ai
+      - it-lead-powerapps
+      - it-lead-dataverse
+      - it-lead-ops
+    systems-tech:
+      - mother-consult
+      - mother-queue
+    apple-advisor:
+      - bby-guidance
+    citymac:
+      - citymac-queue
+  projects:
+    monument-unmaking:
+      - monument-lead
+      - monument-aws
+      - monument-ar
+    mnist-opencv:
+      - mnist-main
+      - mnist-llms
+    vendor-etl:
+      - vendor-etl-main
+    voyage-booker:
+      - voyage-main

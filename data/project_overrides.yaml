@@ -1,0 +1,16 @@
+# Optional per-repo overrides for the Projects section.
+# Keys must match the GitHub repository name exactly.
+#
+# Prefer dropping a photo at:
+#   images/projects/<RepoName>.png  (also .jpg / .jpeg / .webp / .gif)
+# That path is picked up automatically — no entry needed here.
+#
+# Use this file when you want a custom path, title, or description:
+#
+# Voyage-Booker:
+#   image: images/projects/voyage-hero.jpg
+#   title: Voyage Booker
+#   description: Custom blurb shown on the site instead of the GitHub description.
+#
+# MNIST-NN:
+#   image: images/NeNe.png

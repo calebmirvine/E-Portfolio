@@ -1,0 +1,82 @@
+{
+  "user": "calebmirvine",
+  "source": "pinned",
+  "projects": [
+    {
+      "name": "iMessage-Sync-Shortcut",
+      "description": "Cross-platform iCloud Message sync automation for macOS and iOS. Implemented using Swift (Accessibility API), AppleScript, and Apple Shortcuts logic.",
+      "url": "https://github.com/calebmirvine/iMessage-Sync-Shortcut",
+      "homepage": "https://www.icloud.com/shortcuts/d3fb6f16e83a4697a920860391b6d4e8",
+      "language": "Swift",
+      "stars": 1,
+      "topics": [
+        "apple-shortcuts",
+        "applescript",
+        "swift"
+      ],
+      "updated_at": "2026-05-08T00:28:17Z",
+      "image": "https://opengraph.githubassets.com/1/calebmirvine/iMessage-Sync-Shortcut",
+      "owner": "calebmirvine"
+    },
+    {
+      "name": "Voyage-Booker",
+      "description": "ICS 128 Final Project. Interactive nautical trip planner built with JavaScript and Leaflet.js. Integrates Azure Maps for real-time weather data and timezones.",
+      "url": "https://github.com/calebmirvine/Voyage-Booker",
+      "homepage": "https://calebmirvine.github.io/Voyage-Booker/",
+      "language": "JavaScript",
+      "stars": 0,
+      "topics": [
+        "website",
+        "api",
+        "jquery",
+        "azure"
+      ],
+      "updated_at": "2026-05-08T00:26:33Z",
+      "image": "https://opengraph.githubassets.com/1/calebmirvine/Voyage-Booker",
+      "owner": "calebmirvine"
+    },
+    {
+      "name": "MNIST-NN",
+      "description": "A little AI that sees numbers sometimes, made with Python in Jupyter Notebook",
+      "url": "https://github.com/calebmirvine/MNIST-NN",
+      "homepage": "",
+      "language": "Jupyter Notebook",
+      "stars": 1,
+      "topics": [],
+      "updated_at": "2026-06-19T21:25:38Z",
+      "image": "https://opengraph.githubassets.com/1/calebmirvine/MNIST-NN",
+      "owner": "calebmirvine"
+    },
+    {
+      "name": "AR-Capture-The-Zones",
+      "description": "AR Capture The Zones is an augmented reality game built with Unity and AR Foundation. Inspired by \"Conquest\" game modes, it transforms any physical, real-world room into an interactive spatial playfield.",
+      "url": "https://github.com/calebmirvine/AR-Capture-The-Zones",
+      "homepage": "",
+      "language": "C#",
+      "stars": 0,
+      "topics": [
+        "augmented-reality",
+        "csharp",
+        "unity"
+      ],
+      "updated_at": "2026-06-19T21:24:24Z",
+      "image": "https://opengraph.githubassets.com/1/calebmirvine/AR-Capture-The-Zones",
+      "owner": "calebmirvine"
+    },
+    {
+      "name": "Apple-Reminders-To-CSV",
+      "description": "Export macOS Reminders to CSV via AppleScript. Works from Script Editor, Terminal, or Apple Shortcuts.",
+      "url": "https://github.com/calebmirvine/Apple-Reminders-To-CSV",
+      "homepage": "https://www.icloud.com/shortcuts/db790b2362114b1e983b436d0268117f",
+      "language": "AppleScript",
+      "stars": 3,
+      "topics": [
+        "apple-shortcuts",
+        "applescript"
+      ],
+      "updated_at": "2026-05-07T20:57:19Z",
+      "image": "https://opengraph.githubassets.com/1/calebmirvine/Apple-Reminders-To-CSV",
+      "owner": "calebmirvine"
+    }
+  ]
+}

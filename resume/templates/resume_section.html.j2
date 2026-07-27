@@ -1,0 +1,71 @@
+<!-- RESUME:START -->
+<!-- AUTO-GENERATED from resume/content.yaml + profile — do not edit by hand. -->
+<div class="row">
+    <div class="col-12 text-left mb-4">
+        <h2 class="display-2 pb-3 mb-3 fw-bold border-bottom-thick">My Resume</h2>
+    </div>
+
+    <div class="col-12 text-center mb-4">
+        <h1 class="display-5 fw-bold">{{ basics.name | e }}</h1>
+        <p class="lead">{{ basics.location | e }}</p>
+        <div class="contact-info">
+            <p class="mb-1">
+                <a href="tel:{{ basics.phone | tel }}" class="text-decoration-none ct-text-umber">{{ basics.phone | e }}</a> |
+                <a href="mailto:{{ basics.email | e }}" class="text-decoration-none ct-text-umber">{{ basics.email | e }}</a> |
+                <a href="{{ basics.linkedin_url | e }}" class="text-decoration-none ct-text-umber" target="_blank" rel="noopener">LinkedIn</a> |
+                <a href="{{ basics.github_url | e }}" class="text-decoration-none ct-text-umber" target="_blank" rel="noopener">GitHub</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="border-bottom pb-2 mb-3">Education</h2>
+{% for edu in education %}
+        <div class="mb-4">
+            <h3 class="h4">{{ edu.institution | e }}, {{ edu.location | e }}</h3>
+            <p class="fst-italic">{{ edu.degree | e }}</p>
+            <p class="text-muted">{{ edu.dates | html_dates }}</p>
+{% if edu.bullets %}
+            <ul class="list-unstyled">
+{% for bullet in edu.bullets %}
+                <li class="mb-2">• {% if bullet.prefix %}<strong>{{ bullet.prefix | e }}:</strong> {% endif %}{{ bullet.text | e }}</li>
+{% endfor %}
+            </ul>
+{% endif %}
+        </div>
+{% endfor %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="border-bottom pb-2 mb-3">Relevant Experience</h2>
+{% for job in experience %}
+        <div class="mb-4">
+            <h3 class="h4">{{ job.organization | e }}, {{ job.location | e }}</h3>
+            <p class="fst-italic">{{ job.title | e }}</p>
+            <p class="text-muted">{{ job.dates | html_dates }}</p>
+            <ul class="list-unstyled">
+{% for bullet in job.bullets %}
+                <li class="mb-2">• {{ bullet | e }}</li>
+{% endfor %}
+            </ul>
+        </div>
+{% endfor %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="border-bottom pb-2 mb-3">References</h2>
+        <p class="fst-italic">Available on request.</p>
+    </div>
+</div>
+
+<div class="text-center py-5">
+    <a href="Resume.pdf" class="btn btn-primary btn-lg" download="Resume.pdf">
+        <i class="bi bi-download"></i> Download</a>
+</div>
+<!-- RESUME:END -->

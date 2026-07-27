@@ -1,0 +1,60 @@
+name: Build Projects
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - scripts/fetch_github_projects.py
+      - scripts/build_projects.py
+      - templates/projects_section.html.j2
+      - data/project_overrides.yaml
+      - images/projects/**
+      - scripts/requirements.txt
+      - .github/workflows/build-projects.yml
+      - css/style.css
+      - css/custom-theming.css  schedule:
+    # Refresh pinned repos weekly (Monday 15:00 UTC)
+    - cron: "0 15 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-projects-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch GitHub projects
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/fetch_github_projects.py
+
+      - name: Generate projects HTML
+        run: python scripts/build_projects.py
+
+      - name: Commit generated artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/projects.json index.html
+          if git diff --staged --quiet; then
+            echo "No project artifacts changed."
+            exit 0
+          fi
+          git commit -m "chore: sync projects from GitHub pins"
+          git push

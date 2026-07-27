@@ -1,0 +1,56 @@
+<!-- PROJECTS:START -->
+<!-- AUTO-GENERATED from data/projects.json — do not edit by hand. -->
+<div class="row d-flex" data-masonry='{"percentPosition": true }'>
+{% if projects %}
+{% for project in projects %}
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card p-3 h-100">
+            <div class="card-img-top text-center position-relative project-card-media">
+                <div class="spinner-grow position-absolute top-50 start-50 translate-middle z-n1" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <a href="{{ project.url }}" target="_blank" rel="noopener">
+                    <img
+                        class="project-card-image"
+                        src="{{ project.image }}"
+                        alt="{{ project.display_name }} project preview"
+                        loading="lazy"
+                    >
+                </a>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-center">{{ project.display_name }}{% if project.language %} | {{ project.language }}{% endif %}</h5>
+                <p class="card-text text-center mb-3 lh-lg flex-grow-1">{{ project.description }}</p>
+                {% if project.topics %}
+                <p class="text-center small text-muted mb-3">
+                    {% for topic in project.topics[:4] %}
+                    <span class="badge text-bg-light border me-1">{{ topic }}</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <div class="text-center mt-auto">
+                    <a href="{{ project.url }}" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+                    {% if project.homepage %}
+                    <a href="{{ project.homepage }}" class="btn btn-outline-primary ms-2" target="_blank" rel="noopener">Live demo</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% else %}
+    <div class="col-12 text-center">
+        <p class="lead">Projects will appear here once GitHub repos are synced.</p>
+        <a href="https://github.com/{{ user }}" class="btn btn-primary" target="_blank" rel="noopener">Visit GitHub</a>
+    </div>
+{% endif %}
+</div>
+<div class="projects-sync-bar text-center mt-4">
+    <a class="projects-sync-chip" href="https://github.com/{{ user }}" target="_blank" rel="noopener">
+        <i class="bi bi-github" aria-hidden="true"></i>
+        <span class="projects-sync-label">Synced from</span>
+        <strong>github.com/{{ user }}</strong>
+        <span class="projects-sync-meta">{% if source == 'pinned' %}Pinned repos{% else %}Recent repos{% endif %}</span>
+    </a>
+</div>
+<!-- PROJECTS:END -->

@@ -1,0 +1,170 @@
+{# AUTO-GENERATED TEMPLATE — Jinja2. LaTeX {#n} args are in raw blocks. #}
+%-------------------------
+% Resume in Latex
+% Author : Caleb M. Irvine
+% Based off of: https://github.com/sb2nov/resume
+% AUTO-GENERATED from resume/content.yaml + profile — do not edit by hand.
+% Edit resume/ sources and run: python scripts/build_resume.py [--profile NAME]
+%------------------------
+
+{% raw %}
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%% Margins — relaxed for readability
+\addtolength{\oddsidemargin}{-0.2in}
+\addtolength{\evensidemargin}{-0.2in}
+\addtolength{\textwidth}{0.4in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+{% endraw %}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape {{ basics.name | latex }}} \\ \vspace{2pt}
+    \small {{ basics.location | latex }} $|$ {{ basics.phone | latex }} $|$ {{ ("mailto:" ~ basics.email, basics.email) | href }} $|$ {{ (basics.linkedin_url, basics.linkedin_display) | href }} $|$ {{ (basics.github_url, basics.github_display) | href }}
+\end{center}
+
+%-----------OBJECTIVE----------
+\section{Objective}
+\vspace{2pt}
+\textit{\small {{ objective | latex }}}
+\vspace{4pt}
+
+%-----------KEY QUALIFICATIONS----------
+\section{Key Qualifications}
+\resumeItemListStart
+{% for item in qualifications %}
+    \resumeItem{{ item | braced }}
+{% endfor %}
+\resumeItemListEnd
+\vspace{-2pt}
+
+%-----------RELEVANT SKILLS-----------
+\section{Relevant Skills}
+ \begin{itemize}[leftmargin=0.15in, label=\textbullet, itemsep=1pt]
+{% for skill in skills %}
+    \item \small{\textbf{{ skill.category | braced }}{: {{ skill.detail | latex }}}}
+{% endfor %}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+{% for edu in education %}
+    \resumeSubheading
+      {{ edu.institution | braced }}{{ edu.location | braced }}
+      {{ edu.degree | braced }}{{ edu.dates | braced }}
+{% if edu.bullets %}
+      \resumeItemListStart
+{% for bullet in edu.bullets %}
+{% if bullet.prefix %}
+        \resumeItem{\textbf{{ (bullet.prefix ~ ':') | braced }} {{ bullet.text | latex }}}
+{% else %}
+        \resumeItem{{ bullet.text | braced }}
+{% endif %}
+{% endfor %}
+      \resumeItemListEnd
+{% endif %}
+{% endfor %}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+{% for job in experience %}
+
+    \resumeSubheading
+      {{ job.title | braced }}{{ job.dates | braced }}
+      {{ job.organization | braced }}{{ job.location | braced }}
+      \resumeItemListStart
+{% for bullet in job.bullets %}
+        \resumeItem{{ bullet | braced }}
+{% endfor %}
+      \resumeItemListEnd
+{% endfor %}
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+{% for project in projects %}
+      \resumeProjectHeading
+          {\textbf{{ project.name | braced }} $|$ \emph{{ project.tech | braced }}}{{ project.dates | braced }}
+          \resumeItemListStart
+{% for bullet in project.bullets %}
+            \resumeItem{{ bullet | braced }}
+{% endfor %}
+          \resumeItemListEnd
+{% endfor %}
+    \resumeSubHeadingListEnd
+
+{% if show_interests %}
+%-----------INTERESTS-----------
+\section{Interests}
+\vspace{2pt}
+\small{{ interests | braced }}
+\vspace{4pt}
+{% endif %}
+
+\end{document}

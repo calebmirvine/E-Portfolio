@@ -1,0 +1,52 @@
+# Site-facing / portfolio profile (BC Pension tailor preserved).
+# Build: python scripts/build_resume.py --profile default
+
+show_interests: false
+
+objective: >-
+  To contribute to the Performance and Talent Development team at BC Pension
+  Corporation by leveraging Microsoft 365 tools, data analysis, and process
+  improvement to support talent programs and enhance employee experience.
+
+qualifications:
+  - Proficient in modern Microsoft 365 tools (SharePoint, PowerApps, Teams, Excel, Word, PowerPoint) to streamline workflows, organize data, and improve team collaboration.
+  - Experience researching, testing, and implementing digital tools and process improvements to solve complex organizational challenges.
+  - Strong communication and organizational skills, demonstrated through creating clear SOP documentation, managing projects, and leading team initiatives.
+  - Demonstrated leadership and communication skills as project lead for a capstone project and Chair of the Camosun Technology Symposium.
+
+skills:
+  - productivity
+  - data-process
+  - communication
+  - software-dev
+
+include:
+  education:
+    - edu-honours
+    - edu-leadership
+  experience:
+    it-lead:
+      - it-lead-ops
+      - it-lead-powerapps
+      - it-lead-dataverse
+      - it-lead-mdm
+      - it-lead-sharepoint
+    systems-tech:
+      - mother-consult
+      - mother-queue
+    apple-advisor:
+      - bby-consult
+      - bby-guidance
+    butchart:
+      - butchart-service
+    citymac:
+      - citymac-queue
+  projects:
+    vendor-etl:
+      - vendor-etl-main
+    enterprise-mdm:
+      - mdm-main
+    monument-unmaking:
+      - monument-lead
+      - monument-ar
+      - monument-aws
